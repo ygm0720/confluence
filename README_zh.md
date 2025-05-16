@@ -107,3 +107,18 @@ enter `y`, then start server
 docker-compose up -d
 ```
 
+##  教程 https://juejin.cn/post/7409882784058605579
+```shell
+docker run -p 18092:8090 -v confluence3:/var/confluence  --name confluence-srv -e TZ='Asia/Shanghai' haxqer/confluence:9.0.2
+
+
+
+docker exec confluence-srv java -jar /var/agent/atlassian-agent.jar \
+    -d \
+    -p conf \
+    -m Hello@world.com \
+    -n Hello@world.com \
+    -o http://43.242.96.69:18092 \
+    -s BDPI-P1AF-SLPJ-DGBU
+
+```
